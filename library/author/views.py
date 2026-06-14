@@ -44,7 +44,7 @@ def author_delete_view(request, author_id):
 
     if request.method == 'POST':
         # Перевірка: чи є у автора книжки? (використовуємо book_set - це стандартний Django related_name)
-        if author.book_set.exists():
+        if author.books.exists():
             # Тут можна додати вивід повідомлення про помилку, якщо хочеш
             return redirect('authors_list')
 
